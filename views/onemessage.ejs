@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #from{
+            position: absolute;
+            top:95%;
+        }
+    </style>
+</head>
+<body>
+   <% if (auther||recive) { %>
+        <% for( let index = 0; index < auther.length; index++ ) { %>
+                <p><%=auther[index].auther %></p>
+                <h3><%= auther[index].contend %></h3>
+        <% } %>
+        <% for( let index = 0; index < recive.length; index++ ) { %>
+                <p><%=recive[index].auther %></p>
+                <h3><%= recive[index].contend %> </h3>
+        <% } %>
+   <% } %>
+    <form action="/onemessage" method="post" id="from" >
+        <input type="text" name="text" autocomplete="none">
+        <input type="submit" value="press">
+
+    </form>
+</body>
+</html>
